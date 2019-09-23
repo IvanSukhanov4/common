@@ -142,8 +142,9 @@ return {letters: num for letters, num in enumerate([chr(letters) for letters in 
 3.chr(letters) - преображает цифры в буквы
 4.for letters in range(97, 123) - указандиапзон, где 97 это а.
 5. 1 - это я так понял первое значение
-    return {letters: num for letters, num in enumerate([chr(letters) for letters in range(97, 123)], 1)}
+  
     """
+    return {letters: num for letters, num in enumerate([chr(letters) for letters in range(97, 123)], 1)}
 
 def simple_sort(data: List[int]) -> List[list]:
     """
