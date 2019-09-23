@@ -15,7 +15,7 @@ def is_two_object_has_same_value(first: Any, second: Any) -> bool:
     If @first and @second has same value should return True
     In another case should return False
     """
-    pass
+    return first == second
 
 
 def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
@@ -23,7 +23,8 @@ def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    pass
+    return type(first) == type(second)
+
 
 
 def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
@@ -31,7 +32,7 @@ def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    pass
+    return first is second
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -48,7 +49,10 @@ def multiple_ints(first_value: int, second_value: int) -> int:
     Returns:
         Product of elements
     """
-    pass
+    if isintanse(first_value, int) and isintanse(second_value, int):
+        return first_value * second_value
+    raise ValueError
+
 
 
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
@@ -78,7 +82,12 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
             print("Not valid input data")
         >>> "Not valid input data"
     """
-    pass
+    try:
+        raise int(first_value) * int(second_value)
+
+    except ValueError:
+        pass
+        print( "Not valid input data")
 
 
 def is_word_in_text(word: str, text: str) -> bool:
@@ -97,14 +106,13 @@ def is_word_in_text(word: str, text: str) -> bool:
         >>> False
 
     """
-    pass
-
+    return word in text
 
 def some_loop_exercise() -> list:
     """
     Use loop to create list that contain int values from 0 to 12 except 6 and 7
     """
-    pass
+    return [num for num in range(13) if num != 6 and num != 7]
 
 
 def remove_from_list_all_negative_numbers(data: List[int]) -> list:
@@ -116,7 +124,7 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
         remove_from_list_all_negative_numbers([1, 5, -7, 8, -1])
         >>> [1, 5, 8]
     """
-    pass
+    return [num for num in data if num >= 0]
 
 
 def alphabet() -> dict:
@@ -127,8 +135,15 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    pass
-
+    """
+return {letters: num for letters, num in enumerate([chr(letters) for letters in range(97, 123)], 1)} - 
+1. мы создаем в одну строку словарь, с ключем letters и значением num
+2.enumerate - преображает в словарь
+3.chr(letters) - преображает цифры в буквы
+4.for letters in range(97, 123) - указандиапзон, где 97 это а.
+5. 1 - это я так понял первое значение
+    return {letters: num for letters, num in enumerate([chr(letters) for letters in range(97, 123)], 1)}
+    """
 
 def simple_sort(data: List[int]) -> List[list]:
     """
@@ -139,4 +154,13 @@ def simple_sort(data: List[int]) -> List[list]:
     Returns:
 
     """
-    pass
+    sort_list = []
+    copy_list = deepcopy(data)
+    while len(data_copied) != 0:
+        min = copy_list[0]
+        for x in copy_list:
+            if x < min:
+                min = x
+        sort_list.append(min_num)
+        copy_list.remove(min_num)
+    return sort_list
