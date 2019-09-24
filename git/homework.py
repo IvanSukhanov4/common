@@ -4,6 +4,7 @@ This is a list of functions that should be completed.
 
 from typing import Any
 from typing import List
+from copy imort deepcopy
 
 
 class OurAwesomeException(Exception):
@@ -85,9 +86,9 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
     try:
         raise int(first_value) * int(second_value)
 
-    except ValueError:
+    except (ValueError, TypeError):
         pass
-        print( "Not valid input data")
+    raise ValueError
 
 
 def is_word_in_text(word: str, text: str) -> bool:
@@ -157,11 +158,11 @@ def simple_sort(data: List[int]) -> List[list]:
     """
     sort_list = []
     copy_list = deepcopy(data)
-    while len(data_copied) != 0:
+    while len(copy_list) != 0:
         min = copy_list[0]
         for x in copy_list:
             if x < min:
                 min = x
-        sort_list.append(min_num)
-        copy_list.remove(min_num)
+        sort_list.append(min)
+        copy_list.remove(min)
     return sort_list
