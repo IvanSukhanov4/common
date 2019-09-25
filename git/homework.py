@@ -4,7 +4,7 @@ This is a list of functions that should be completed.
 
 from typing import Any
 from typing import List
-from copy imort deepcopy
+from copy import deepcopy
 
 
 class OurAwesomeException(Exception):
