@@ -134,15 +134,7 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    """
-return {letters: num for letters, num in enumerate([chr(letters) for letters in range(97, 123)], 1)} - 
-1. мы создаем в одну строку словарь, с ключем letters и значением num
-2.enumerate - преображает в словарь
-3.chr(letters) - преображает цифры в буквы
-4.for letters in range(97, 123) - указандиапзон, где 97 это а.
-5. 1 - это я так понял первое значение
-  
-    """
+
     return {letters: num for letters, num in enumerate([chr(letters) for letters in range(97, 123)], 1)}
 
 
