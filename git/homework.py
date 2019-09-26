@@ -27,7 +27,6 @@ def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
     return type(first) == type(second)
 
 
-
 def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     """
     If @first and @second has same type should return True
@@ -50,10 +49,10 @@ def multiple_ints(first_value: int, second_value: int) -> int:
     Returns:
         Product of elements
     """
-    if isintanse(first_value, int) and isintanse(second_value, int):
-        return first_value * second_value
-    raise ValueError
-
+    try:
+        return int(first_value)*int(second_value)
+    except (TypeError, ValueError):
+        raise ValueError('Not valid input data')
 
 
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
@@ -85,10 +84,8 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
     """
     try:
         raise int(first_value) * int(second_value)
-
-    except (ValueError, TypeError):
-        pass
-    raise ValueError
+    except(ValueError, TypeError):
+        raise ValueError("Not valid input data")
 
 
 def is_word_in_text(word: str, text: str) -> bool:
@@ -108,6 +105,7 @@ def is_word_in_text(word: str, text: str) -> bool:
 
     """
     return word in text
+
 
 def some_loop_exercise() -> list:
     """
@@ -146,6 +144,7 @@ return {letters: num for letters, num in enumerate([chr(letters) for letters in 
   
     """
     return {letters: num for letters, num in enumerate([chr(letters) for letters in range(97, 123)], 1)}
+
 
 def simple_sort(data: List[int]) -> List[list]:
     """
