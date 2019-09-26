@@ -50,8 +50,8 @@ def multiple_ints(first_value: int, second_value: int) -> int:
         Product of elements
     """
     try:
-        return int(first_value)*int(second_value)
-    except (TypeError, ValueError):
+        return int(first_value) * int(second_value)
+    except ValueError:
         raise ValueError('Not valid input data')
 
 
