@@ -37,7 +37,7 @@ def task_3_find_item_via_value(data: DT, value) -> DT:
         >>> [{'name': 'Alex', 'age': 26}]
     """
     if data:
-        return [dt for dt in data for key,val in dt.items() if val == value]
+        return [dt for dt in data for key, val in dt.items() if val == value]
 
 
 def task_4_min_value_integers(data: List[int]) -> int:
@@ -107,7 +107,6 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         next(a)
         >>> 3
     """
-
     yield 2
     for a in range(2, 200):
         for b in range(2, a):
