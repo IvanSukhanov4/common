@@ -36,7 +36,7 @@ def task_3_find_item_via_value(data: DT, value) -> DT:
         find_item_via_value([{'name': 'Alex', 'age': 26}, {'name': 'denys', 'age': 89}], 26)
         >>> [{'name': 'Alex', 'age': 26}]
     """
-    if data:
+    if data:     
         return [dt for dt in data for key, val in dt.items() if val == value]
 
 
