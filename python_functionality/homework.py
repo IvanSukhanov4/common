@@ -52,11 +52,13 @@ def task_5_min_value_strings(data: List[Union[str, int]]) -> str:
     """
     Find the shortest string
     """
-    if len(data):
+    if len(data)>0:
         if isinstance(data, str):
             data = data.split()
             data = map(str, data)
         return sorted(data, key=len)[0]
+    else:
+        return None
 
 
 def task_6_min_value_list_of_dicts(data: DT, key: str) -> ST:
