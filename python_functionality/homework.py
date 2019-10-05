@@ -72,7 +72,7 @@ def task_7_max_value_list_of_lists(data: List[List[int]]) -> int:
     Find max value from list of lists
     """
     if data:
-        return max(max(data))
+        return max(max(data, key=lambda x: max(x)))
 
 
 def task_8_sum_of_ints(data: List[int]) -> int:
