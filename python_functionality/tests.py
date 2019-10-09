@@ -91,8 +91,7 @@ class SumTestCases(unittest.TestCase):
 class MaxTestCases(unittest.TestCase):
 
     def test_task_7_valid_values(self):
-        given_data = [[97, 34, -35, -80, 77, -19, 71], [76, -93, 36, -76, -1, -51], [-82, -12, 63, 48], [96, -89],
-                      [-91, 10, 44, 17], [-55, -36, 93, -91], [-96]]
+        given_data = [[97, 34, -35, -80, 77, -19, 71], [76, -93, 346, -76, -1, -51], [-82, -12, 63, 48], [96, -89], [-91, 10, 44, 17], [-55, -36, 93, -91], [-96]]
         self.assertEqual(task_7_max_value_list_of_lists(given_data), 97)
 
     def test_task_7_emtpy_lists(self):

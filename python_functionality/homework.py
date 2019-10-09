@@ -36,8 +36,8 @@ def task_3_find_item_via_value(data: DT, value) -> DT:
         find_item_via_value([{'name': 'Alex', 'age': 26}, {'name': 'denys', 'age': 89}], 26)
         >>> [{'name': 'Alex', 'age': 26}]
     """
-    if data:
-        return [dt for dt in data for key,val in dt.items() if val == value]
+    if data:     
+        return [dt for dt in data for key, val in dt.items() if val == value]
 
 
 def task_4_min_value_integers(data: List[int]) -> int:
@@ -55,7 +55,7 @@ def task_5_min_value_strings(data: List[Union[str, int]]) -> str:
     if len(data):
         if isinstance(data, str):
             data = data.split()
-            data = map(str, data)
+        data = map(str, data)
         return sorted(data, key=len)[0]
 
 
@@ -72,7 +72,7 @@ def task_7_max_value_list_of_lists(data: List[List[int]]) -> int:
     Find max value from list of lists
     """
     if data:
-        return max(max(data))
+        return max(max(data, key=lambda x: max(x)))
 
 
 def task_8_sum_of_ints(data: List[int]) -> int:
@@ -107,7 +107,6 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         next(a)
         >>> 3
     """
-
     yield 2
     for a in range(2, 200):
         for b in range(2, a):
