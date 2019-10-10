@@ -2,10 +2,10 @@ import math
 
 
 class Rectangle:
+       
     def __init__(self, width, height):
         self.width = width
         self.height = height
-
 
     def get_rectangle_perimeter(self):
         """
@@ -15,7 +15,6 @@ class Rectangle:
         perimeter = (self.width + self.height) * 2
         return perimeter
 
-
     def get_rectangle_square(self):
         """
         Returns rectangle square
@@ -23,7 +22,6 @@ class Rectangle:
         """
         square = self.width * self.height
         return square
-
 
     def get_sum_of_corners(self, number_of_corners):
         """
@@ -41,7 +39,6 @@ class Rectangle:
             sum_of_corners += 90
         return sum_of_corners
 
-
     def get_rectangle_diagonal(self):
         """
         Get the rectangle diagonal due to rhe Pifagor formula c^2 = a^2 + b^2
@@ -51,7 +48,6 @@ class Rectangle:
         diagonal = math.sqrt(math.pow(self.height, 2) + math.pow(self.width, 2))
         return diagonal
 
-
     def get_radius_of_circumscribed_circle(self):
         """
         Radius equal half of rectangle diagonal
@@ -60,7 +56,6 @@ class Rectangle:
         diagonal = self.get_rectangle_diagonal()
         radius = diagonal / 2
         return radius
-
 
     def get_radius_of_inscribed_circle(self):
         """
@@ -73,5 +68,5 @@ class Rectangle:
         """
         if self.width != self.height:
             raise ValueError
-        radius = (self.width + self.height) / 4
+        radius = self.height / 2
         return radius
