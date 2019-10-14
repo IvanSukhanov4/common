@@ -11,7 +11,6 @@ def task1(a, b):
     """
     return list(set(a + b))
 
-
 def task2(check_string):
     """
     Return the number of times that the letter “a” appears anywhere in the given string
@@ -20,13 +19,11 @@ def task2(check_string):
     if count > 1:
         return count
 
-
 def task3(num):
     """
     Write a Python program to check if a given positive integer is a power of three
     """
     return math.ceil(math.log(num, 3)) == math.floor(math.log(num, 3))
-
 
 def task4(num):
     """
@@ -36,7 +33,6 @@ def task4(num):
         num = sum([int(v) for v in str(num)])
     return num
 
-
 def task5(mylist):
     """
     Write a Python program to push all zeros to the end of a list.
@@ -44,7 +40,6 @@ def task5(mylist):
     mylist.append(0)
     del mylist[mylist.index(0)]
     return mylist
-
 
 def task6(mylist2):
     """
@@ -57,14 +52,12 @@ def task6(mylist2):
             return False
     return True
 
-
 def task7(mylist3):
     """
     Write a Python program to find the number in a list that doesn't occur twice.
     """
     a = ([str(x) for x in mylist3 if mylist3.count(x)==1])
     return int(a.pop(0))
-
 
 def task8(mylist4):
     """
@@ -73,20 +66,17 @@ def task8(mylist4):
     mylistnew = ([num for num in range(1, len(mylist4) + 2)])
     return int(''.join([str(x) for x in mylistnew if x not in mylist4]))
 
-
 def task9(mylist5):
     """
     Write a Python program to count the elements in a list until an element is a tuple.
     """
     return int(''.join([str(x) for x in range(len(mylist5)-1) if isinstance(mylist5[x], tuple)]))
 
-
 def task10(string):
     """
     Write a program that will take the str parameter being passed and return the string in reversed order.
     """
     return ''.join(reversed(string))
-
 
 def task11(min):
     """
@@ -99,13 +89,11 @@ def task11(min):
         h += 1
     return f"{h}:{min}"
 
-
 def task12(string):
     """
     Write a program that will take the parameter being passed and return the largest word in the string
     """
     return max([re.sub("[^a-zA-Z]", "", word) for word in string.split()])
-
 
 def task13(string):
     """
@@ -114,7 +102,6 @@ def task13(string):
     """
     string_new = reversed(string.split())
     return ' '.join(string_new)
-
 
 def task14(n):
     """
@@ -127,13 +114,11 @@ def task14(n):
             a, b = b, a + b
     return list(fibonacci(n))
 
-
 def task15(list):
     """
     Write one line of Python that takes list and makes a new list that has only the even elements of this list in it
     """
     return([x for x in list if x%2 == 0])
-
 
 def task16(n):
     """
@@ -144,7 +129,6 @@ def task16(n):
         return sum([x+1 for x in range(n)])
     raise ValueError
 
-
 def task17(n):
     """
     Write a program that will take the parameter being passed and return the factorial of it
@@ -153,7 +137,6 @@ def task17(n):
     for x in range(1, n+1):
         a *= x
     return a
-
 
 def task18(list1):
     """
@@ -165,7 +148,6 @@ def task18(list1):
     new_list = [x.upper() if x in ["a", "e", "i", "o", "u"] else x for x in list1]
     return ''.join(x for x in new_list)
 
-
 def task19(string):
     """
     Write a program that will take the str string parameter being passed and return the string with
@@ -173,7 +155,6 @@ def task19(string):
     """
     string_new = re.sub('[!@#$&,.123456789]', '', string)
     return "".join(sorted(string_new))
-
 
 def task20(n1, n2):
     """
