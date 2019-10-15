@@ -37,8 +37,12 @@ def task5(mylist):
     """
     Write a Python program to push all zeros to the end of a list.
     """
-    mylist.append(0)
-    del mylist[mylist.index(0)]
+    a = 0
+    while 0 in mylist:
+        mylist.pop(0)
+        a += 1
+    for b in range(a):
+        mylist.append(0)
     return mylist
 
 def task6(mylist2):
