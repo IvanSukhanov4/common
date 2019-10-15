@@ -1,8 +1,26 @@
 class Cat:
-    def __init__(self, age, average_speed ):
+
+    def __init__(self, age):
         self.age = age
-        self.average_speed = _set_average_speed()
+        self.average_speed = self._set_average_speed()
         self.saturation_level = 50
+
+    def eat(self, product):
+        if product == 'fodder':
+            return self._increase_saturation_level(10)
+        elif product == 'apple':
+            return self._increase_saturation_level(5)
+        elif product == 'milk':
+            return self._increase_saturation_level(2)
+        return self._increase_saturation_level(0)
+
+    def _reduce_saturation_level(self, value):
+        self.saturation_level -= value
+        if self.saturation_level < 0:
+            return 0
+        elif self.saturation_level > 100:
+            return 100
+        return self.saturation_level
 
     def _increase_saturation_level(self, value):
         self.saturation_level += value
@@ -12,30 +30,35 @@ class Cat:
             return 100
         return self.saturation_level
 
-    def _reduse_saturation_level(self, value):
-        self.saturation_level -= value
-        if self.saturation_level < 0:
-            return 0
-        elif self.saturation_level > 100:
-            return 100
-        return self.saturation_level
-
-    def eat(self, product):
-        if product = "fodder":
-            return self._increase_saturation_level(10)
-        elif product = "apple":
-            return self._increase_saturation_level(5)
-        elif product = "milk":
-            return self._increase_saturation_level(2)
-        return self.saturation_level
-
-    def _set_average_speed(self)
+    def _set_average_speed(self):
         if self.age <= 7:
             return 12
         elif 10 >= self.age > 7:
             return 9
-        elif self.age >10:
-            return 6
+        return 6
+
+    def run(self, hours):
+        ran_km = self._set_average_speed() * hours
+        if ran_km <= 25:
+            self._reduce_saturation_level(2)
+        elif 50 >= ran_km > 25:
+            self._reduce_saturation_level(5)
+        elif 100 >= ran_km > 50:
+            self._reduce_saturation_level(15)
+        elif 200 >= ran_km > 100:
+            self._reduce_saturation_level(25)
+        elif ran_km > 200:
+            self._reduce_saturation_level(50)
+        return f"Your cat ran {ran_km} kilometers"
+
+    def get_saturation_level(self):
+        if self.saturation_level == 0:
+            return "Your cat is dead :("
+        return self.saturation_level
+
+    def get_average_speed(self):
+        return self._set_average_speed()
+
 
     """
     Write Class Cat which will receive age from user
@@ -78,32 +101,21 @@ class Cat:
 
     """
 
-    def __init__(self, age):
-        pass
-
+class Cheetah(Cat):
     def eat(self, product):
-        pass
-
-    def _reduce_saturation_level(self, value):
-        pass
-
-    def _increase_saturation_level(self, value):
-        pass
+        if product == "gazelle":
+            return self._increase_saturation_level(30)
+        elif product == "rabbit":
+            return self._increase_saturation_level(15)
+        return self.saturation_level
 
     def _set_average_speed(self):
-        pass
-
-    def run(self, hours):
-        pass
-
-    def get_saturation_level(self):
-        pass
-
-    def get_average_speed(self):
-        pass
-
-
-class Cheetah:
+        if self.age <= 5:
+            return 90
+        elif 15 >= self.age > 5:
+            return 75
+        elif self.age > 15:
+            return 40
     """
     * Inherit from class Cat
 
@@ -135,13 +147,15 @@ class Wall:
     """
 
     def __init__(self, width, height):
-        pass
+        self.width = width
+        self.height = height
 
     def wall_square(self):
-        pass
+        return self.width * self.height
 
     def number_of_rolls_of_wallpaper(self, roll_width_m, roll_length_m):
-        pass
+        return round(round(roll_length_m / self.height) / round(self.width / roll_width_m))
+
 
 
 class Roof:
@@ -156,10 +170,14 @@ class Roof:
     """
 
     def __init__(self):
-        pass
+        self.width = width
+        self.height = height
+        self.roof_type = roof_type
 
     def roof_square(self):
-        pass
+        if roof_type == "gable":
+            return self.width * self.height * 2
+        elif roof_type == "single-pitch"
 
 
 class Window:
