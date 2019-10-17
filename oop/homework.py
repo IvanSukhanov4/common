@@ -75,7 +75,7 @@ class Cat:
     def _set_average_speed(self):
         if self.age <= 7:
             return 12
-        elif 10 >= self.age > 7:
+        elif 10 >= self.age:
             return 9
         return 6
 
@@ -83,11 +83,11 @@ class Cat:
         ran_km = self._set_average_speed() * hours
         if ran_km <= 25:
             self._reduce_saturation_level(2)
-        elif 50 >= ran_km > 25:
+        elif 50 >= ran_km:
             self._reduce_saturation_level(5)
-        elif 100 >= ran_km > 50:
+        elif 100 >= ran_km:
             self._reduce_saturation_level(15)
-        elif 200 >= ran_km > 100:
+        elif 200 >= ran_km:
             self._reduce_saturation_level(25)
         elif ran_km > 200:
             self._reduce_saturation_level(50)
@@ -128,7 +128,7 @@ class Cheetah(Cat):
     def _set_average_speed(self):
         if self.age <= 5:
             return 90
-        elif 15 >= self.age > 5:
+        elif 15 >= self.age:
             return 75
         elif self.age > 15:
             return 40
@@ -347,16 +347,16 @@ class House:
         return len(self.__windows)
 
     def get_door_price(self, material):
-        return Door.door_price(self.__door, material)
+        return self.__door.door_price(material)
 
     def update_wood_price(self, new_wood_price):
-        Door.update_wood_price(self.__door, new_wood_price)
+        self.__door.update_wood_price(new_wood_price)
 
     def update_metal_price(self, new_metal_price):
-        Door.update_metal_price(self.__door, new_metal_price)
+        self.__door.update_metal_price(new_metal_price)
 
     def get_roof_square(self):
-        return Roof.roof_square(self.__roof)
+        return self.__roof.roof_square()
 
     def get_walls_square(self):
         return sum([Wall.wall_square() for Wall in self.__walls])
@@ -365,7 +365,7 @@ class House:
         return sum([Window.window_square() for Window in self.__windows])
 
     def get_door_square(self):
-        return Door.door_square(self.__door)
+        return self.__door.door_square()
 
     def get_number_of_rolls_of_wallpapers(self, roll_width_m, roll_length_m):
         if roll_width_m == 0 or roll_length_m == 0:
