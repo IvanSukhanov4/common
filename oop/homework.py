@@ -359,10 +359,10 @@ class House:
         return self.__roof.roof_square()
 
     def get_walls_square(self):
-        return sum([Wall.wall_square() for Wall in self.__walls])
+        return sum([wall.wall_square() for wall in self.__walls])
 
     def get_windows_square(self):
-        return sum([Window.window_square() for Window in self.__windows])
+        return sum([window.window_square() for window in self.__windows])
 
     def get_door_square(self):
         return self.__door.door_square()
@@ -371,7 +371,7 @@ class House:
         if roll_width_m == 0 or roll_length_m == 0:
             raise ValueError("Sorry length must be not 0")
         else:
-            return sum([Wall.number_of_rolls_of_wallpaper(roll_width_m, roll_length_m) for Wall in self.__walls])
+            return sum([wall.number_of_rolls_of_wallpaper(roll_width_m, roll_length_m) for wall in self.__walls])
 
     def get_room_square(self):
         return self.get_walls_square() - self.get_door_square() - self.get_windows_square()
