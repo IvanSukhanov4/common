@@ -17,3 +17,31 @@
     </ul>
 </div>
 {% endblock %}
+
+{% block fruits %}
+
+<ul>
+    {% for element in fruits %}
+        {% if element == 'strawberry' %}
+            <li style="color:red;">{{element}}</li>
+        {% else %}
+            <li>{{element}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block vegetables %}
+
+<ul>
+    {% for element in vegetables %}
+        {% if element == 'beetroot'%}
+            <li>{{element|upper()}}</li>
+        {% else %}
+            <li>{{element}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{% endblock %}
