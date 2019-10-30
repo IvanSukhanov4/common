@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{% block info %}
+
+<ul>
+    {% for element in fruits %}
+        {% if element == 'strawberry' %}
+            <li style="color:red;">{{element}}</li>
+        {% else %}
+            <li>{{element}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{% endblock %}
