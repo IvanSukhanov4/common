@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    #info-text{font: 15pt sans-serif; text-align: center;}
+    #images {float: top; text-align: center;}
+{% endblock %}
+
+{% block info %}
+<h1 class="main-header">About author</h1>
+<br>
+<div id="images">
+    <img src="{{url_for('static', filename='author.jpg')}}" width="550" height="366" hspace="15">
+</div>
+<br>
+<div id="info-text" hspace="15">
+    <p>Ivan Sukhanov  <a href="https://github.com/IvanSukhanov4">Github</a></p>
+    <br>
+    <p>I did it with looking to the previous homework, my notes and my Colleagues help!</p>
+</div>
+{% endblock %}
